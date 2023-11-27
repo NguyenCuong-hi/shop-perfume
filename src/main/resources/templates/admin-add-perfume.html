@@ -11,61 +11,61 @@
                 <th:block th:replace="fragments/account-fragments :: account-sidebar"/>
                 <div class="col-md-9 mb-5">
                     <th:block th:replace="fragments/common-fragments :: info-title(
-                        text='Add perfume',
+                        text='Thêm mới sản phẩm',
                         icon='fas fa-plus-square mr-2'
                     )"/>
                     <br/>
                     <form method="post" action="/admin/add/perfume" enctype="multipart/form-data">
                         <div class="form row">
                             <th:block th:replace="fragments/account-fragments :: add-perfume-input(
-                                title='Perfume title',
+                                title='Tên nước hoa',
                                 name='perfumeTitle',
                                 placeholder='Enter the perfume title',
                                 value=(${perfume} ? ${perfume.perfumeTitle} : ''),
                                 error=(${perfumeTitleError})
                             )"/>
                             <th:block th:replace="fragments/account-fragments :: add-perfume-input(
-                                title='Brand',
+                                title='Nhãn hiệu',
                                 name='perfumer',
-                                placeholder='Enter the brand',
+                                placeholder='Nhập tên nhãn hiệu',
                                 value=(${perfume} ? ${perfume.perfumer} : ''),
                                 error=(${perfumerError})
                             )"/>
                         </div>
                         <div class="form row mt-3">
                             <th:block th:replace="fragments/account-fragments :: add-perfume-input(
-                                title='Release year',
+                                title='Năm sản xuất',
                                 name='year',
-                                placeholder='Enter the release year',
+                                placeholder='Nhập năm sản xuất',
                                 value=(${perfume} ? ${perfume.year} : ''),
                                 error=(${yearError})
                             )"/>
                             <th:block th:replace="fragments/account-fragments :: add-perfume-input(
-                                title='Manufacturer country',
+                                title='Nơi sản xuất',
                                 name='country',
-                                placeholder='Manufacturer country',
+                                placeholder='Nơi sản xuất',
                                 value=(${perfume} ? ${perfume.country} : ''),
                                 error=(${countryError})
                             )"/>
                         </div>
                         <div class="form row mt-3">
                             <th:block th:replace="fragments/account-fragments :: add-perfume-select(
-                                title='Perfume type',
+                                title='Loại nước hoa',
                                 name='type',
                                 options=(${ {'Eau de Parfum', 'Eau de Toilette'} }),
                                 error=(${typeError})
                             )"/>
                             <th:block th:replace="fragments/account-fragments :: add-perfume-input(
-                                title='Volume',
+                                title='Dung tích',
                                 name='volume',
-                                placeholder='Enter the volume',
+                                placeholder='Nhập dung tích',
                                 value=(${perfume} ? ${perfume.volume} : ''),
                                 error=(${volumeError})
                             )"/>
                         </div>
                         <div class="form row mt-3">
                             <th:block th:replace="fragments/account-fragments :: add-perfume-select(
-                                title='Gender',
+                                title='Giới tính',
                                 name='perfumeGender',
                                 options=(${ {'male', 'female'} }),
                                 error=(${perfumeGenderError})
@@ -96,9 +96,9 @@
                         </div>
                         <div class="form row mt-3">
                             <th:block th:replace="fragments/account-fragments :: add-perfume-input(
-                                title='Price',
+                                title='Giá thành',
                                 name='price',
-                                placeholder='Enter the price',
+                                placeholder='Nhập giá thành',
                                 value=(${perfume} ? ${perfume.price} : ''),
                                 error=(${priceError})
                             )"/>
@@ -107,7 +107,7 @@
                             </div>
                         </div>
                         <th:block th:replace="fragments/common-fragments :: icon-button(
-                            text='Add',
+                            text='Lưu',
                             buttonClassName='mt-3',
                             icon='fas fa-plus-square mr-2'
                         )"/>

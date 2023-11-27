@@ -20,25 +20,25 @@
                             <div class="col-md-6">
                                 <h5 class="manage_user_order_subtitle">
                                     <i class="fas fa-info-circle mr-2"></i>
-                                    Customer information
+                                    Thông tin khách hàng
                                 </h5>
-                                <th:block th:replace="fragments/common-fragments :: data-item(title='First name', text=${order.getFirstName()})"/>
-                                <th:block th:replace="fragments/common-fragments :: data-item(title='Last name', text=${order.getLastName()})"/>
-                                <th:block th:replace="fragments/common-fragments :: data-item(title='City', text=${order.getCity()})"/>
-                                <th:block th:replace="fragments/common-fragments :: data-item(title='Address', text=${order.getAddress()})"/>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Họ', text=${order.getFirstName()})"/>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Tên', text=${order.getLastName()})"/>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Thành phố', text=${order.getCity()})"/>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Địa chỉ', text=${order.getAddress()})"/>
                                 <th:block th:replace="fragments/common-fragments :: data-item(title='Email', text=${order.getEmail()})"/>
-                                <th:block th:replace="fragments/common-fragments :: data-item(title='Phone number', text=${order.getPhoneNumber()})"/>
-                                <th:block th:replace="fragments/common-fragments :: data-item(title='Post index', text=${order.getPostIndex()})"/>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Số điện thoại', text=${order.getPhoneNumber()})"/>
+                                <th:block th:replace="fragments/common-fragments :: data-item(title='Mã post', text=${order.getPostIndex()})"/>
                             </div>
                             <div class="col-md-6">
                                 <h5 class="manage_user_order_subtitle">
                                     <i class="fas fa-info-circle mr-2"></i>
-                                    Order information
+                                    Thông tin đơn hàng
                                 </h5>
                                 <th:block th:replace="fragments/common-fragments :: data-item(title='Order id', text=${order.getId()})"/>
                                 <th:block th:replace="fragments/common-fragments :: data-item(title='Date', text=${#temporals.format(order.getDate(), 'yyyy-MM-dd HH:mm')})"/>
                                 <h4 class="manage_user_order_summary">
-                                    Order summary:
+                                    Tóm tắt đơn hàng:
                                     <span class="manage_user_order_summary_price" th:text="'$' + ${order.getTotalPrice()} + '0'"></span>
                                 </h4>
                             </div>
@@ -46,10 +46,10 @@
                         <table class="table border text-center">
                             <thead class="table-active">
                             <tr>
-                                <th>Perfume Id</th>
-                                <th>Perfume Brand</th>
-                                <th>Perfume Name</th>
-                                <th>Price</th>
+                                <th>Mã nước hoa</th>
+                                <th>Nhãn hiệu</th>
+                                <th>Tên nước hoa</th>
+                                <th>Giá thành</th>
                             </tr>
                             </thead>
                             <tbody th:each="perfume : ${order.getPerfumes()}">

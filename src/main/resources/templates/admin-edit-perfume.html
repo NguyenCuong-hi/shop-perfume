@@ -15,44 +15,44 @@
                         <div class="row mt-5">
                             <div class="col-md-6">
                                 <th:block th:replace="fragments/account-fragments :: edit-perfume-input(
-                                    title='Perfume title',
+                                    title='Tên nước hoa',
                                     name='perfumeTitle',
                                     value=(${perfume.getPerfumeTitle()}),
                                     error=(${perfumeTitleError})
                                 )"/>
                                 <th:block th:replace="fragments/account-fragments :: edit-perfume-input(
-                                    title='Brand',
+                                    title='Nhãn hiệu',
                                     name='perfumer',
                                     value=(${perfume.getPerfumer()}),
                                     error=(${perfumerError})
                                 )"/>
                                 <th:block th:replace="fragments/account-fragments :: edit-perfume-input(
-                                    title='Release year',
+                                    title='Năm sản xuất',
                                     name='year',
                                     value=(${perfume.getYear()}),
                                     error=(${yearError})
                                 )"/>
                                 <th:block th:replace="fragments/account-fragments :: edit-perfume-input(
-                                    title='Country',
+                                    title='Nơi sản xuất',
                                     name='country',
                                     value=(${perfume.getCountry()}),
                                     error=(${countryError})
                                 )"/>
                                 <th:block th:replace="fragments/account-fragments :: edit-perfume-select(
-                                    title='Perfume type',
+                                    title='Loại nước hoa',
                                     name='type',
                                     options=(${ {'Eau de Parfum', 'Eau de Toilette'} }),
                                     value=(${perfume.getType()}),
                                     error=(${typeError})
                                 )"/>
                                 <th:block th:replace="fragments/account-fragments :: edit-perfume-input(
-                                    title='Volume',
+                                    title='Dung tích',
                                     name='volume',
                                     value=(${perfume.getVolume()}),
                                     error=(${volumeError})
                                 )"/>
                                 <th:block th:replace="fragments/account-fragments :: edit-perfume-select(
-                                    title='Gender',
+                                    title='Giới tính',
                                     name='perfumeGender',
                                     options=(${ {'male', 'female'} }),
                                     value=(${perfume.getPerfumeGender()}),
@@ -77,7 +77,7 @@
                                     error=(${fragranceBaseNotesError})
                                 )"/>
                                 <th:block th:replace="fragments/account-fragments :: edit-perfume-input(
-                                    title='Price',
+                                    title='Giá thành',
                                     name='price',
                                     value=(${perfume.getPrice()}),
                                     error=(${priceError})
@@ -93,7 +93,7 @@
                         </div>
                         <input type="hidden" name="id" th:value="${perfume.getId()}"/>
                         <input type="hidden" name="filename" th:value="${perfume.getFilename()}"/>
-                        <th:block th:replace="fragments/common-fragments :: icon-button(text='Edit', icon='fas fa-edit mr-2')"/>
+                        <th:block th:replace="fragments/common-fragments :: icon-button(text='Lưu', icon='fas fa-edit mr-2')"/>
                     </form>
                 </div>
             </div>

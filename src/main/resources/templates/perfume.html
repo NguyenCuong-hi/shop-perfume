@@ -13,17 +13,17 @@
             <div class="col-md-7">
                 <h2 th:text="${perfume.getPerfumeTitle()}"></h2>
                 <h3 th:text="${perfume.getPerfumer()}"></h3>
-                <p>Product code: <span th:text="${perfume.getId()}"></span></p>
-                <p class="product-stock" style="color: #54C0A1">In Stock</p>
+                <p>Mã nước hoa: <span th:text="${perfume.getId()}"></span></p>
+                <p class="product-stock" style="color: #54C0A1">Giá </p>
                 <div class="row ml-1">
                     <h6 class="mr-5">
-                        $<span th:text="${perfume.getPrice()}"></span>.00
+                        <span th:text="${perfume.getPrice()}"></span>đ
                     </h6>
                     <form action="/cart/add" method="post">
                         <button type="submit" name="perfumeId" class="btn btn-success mx-3"
                                 th:value="${perfume.getId()}">
                             <i class="fas fa-cart-plus mr-2 fa-lg"></i>
-                            ADD TO CART
+                            Thêm vào giỏ hàng
                         </button>
                     </form>
                 </div>
@@ -31,31 +31,31 @@
                 <table class="table">
                     <tbody>
                     <tr>
-                        <td>Perfume title:</td>
+                        <td>Tên nước hoa:</td>
                         <td th:text="${perfume.getPerfumeTitle()}"></td>
                     </tr>
                     <tr>
-                        <td>Brand:</td>
+                        <td>Nhãn hiệu:</td>
                         <td th:text="${perfume.getPerfumer()}"></td>
                     </tr>
                     <tr>
-                        <td>Perfume type:</td>
+                        <td>Loại nước hoa:</td>
                         <td th:text="${perfume.getType()}"></td>
                     </tr>
                     <tr>
-                        <td>Release year:</td>
+                        <td>Năm sản xuất:</td>
                         <td th:text="${perfume.getYear()}"></td>
                     </tr>
                     <tr>
-                        <td>Volume:</td>
+                        <td>Dung tích:</td>
                         <td><span th:text="${perfume.getVolume()}"></span> ml.</td>
                     </tr>
                     <tr>
-                        <td>Manufacturer country:</td>
+                        <td>Nơi sản xuất:</td>
                         <td th:text="${perfume.getCountry()}"></td>
                     </tr>
                     <tr>
-                        <td>Gender:</td>
+                        <td>Giới tính:</td>
                         <td th:text="${perfume.getPerfumeGender()}"></td>
                     </tr>
                     <tr>

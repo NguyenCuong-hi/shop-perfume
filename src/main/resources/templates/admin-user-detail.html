@@ -11,24 +11,24 @@
                 <th:block th:replace="fragments/account-fragments :: account-sidebar"/>
                 <div class="col-md-10 mb-5">
                     <th:block th:replace="fragments/common-fragments :: info-title(
-                        text='User: ' + ${user.getFirstName()} + ' ' + ${user.getLastName()},
+                        text='Người dùng: ' + ${user.getFirstName()} + ' ' + ${user.getLastName()},
                         icon='fas fa-user-edit mr-2'
                     )"/>
                     <div class="row mt-5 mb-4 border px-3 py-3">
                         <div class="col-md-4">
-                            <th:block th:replace="fragments/common-fragments :: data-item(title='User id', text=${user.getId()})" />
+                            <th:block th:replace="fragments/common-fragments :: data-item(title='Mã người dùng', text=${user.getId()})" />
                             <th:block th:replace="fragments/common-fragments :: data-item(title='Email', text=${user.getEmail()})" />
-                            <th:block th:replace="fragments/common-fragments :: data-item(title='Role', text=${user.getRoles().iterator().next()})" />
+                            <th:block th:replace="fragments/common-fragments :: data-item(title='Quyền', text=${user.getRoles().iterator().next()})" />
                         </div>
                         <div class="col-md-4">
-                            <th:block th:replace="fragments/common-fragments :: data-item(title='First name', text=${user.getFirstName()})" />
-                            <th:block th:replace="fragments/common-fragments :: data-item(title='Last name', text=${user.getLastName()})" />
-                            <th:block th:replace="fragments/common-fragments :: data-item(title='City', text=${user.getCity()})" />
+                            <th:block th:replace="fragments/common-fragments :: data-item(title='Họ', text=${user.getFirstName()})" />
+                            <th:block th:replace="fragments/common-fragments :: data-item(title='Tên', text=${user.getLastName()})" />
+                            <th:block th:replace="fragments/common-fragments :: data-item(title='Thành phố', text=${user.getCity()})" />
                         </div>
                         <div class="col-md-4">
-                            <th:block th:replace="fragments/common-fragments :: data-item(title='Address', text=${user.getAddress()})" />
-                            <th:block th:replace="fragments/common-fragments :: data-item(title='Phone number', text=${user.getPhoneNumber()})" />
-                            <th:block th:replace="fragments/common-fragments :: data-item(title='Post index', text=${user.getPostIndex()})" />
+                            <th:block th:replace="fragments/common-fragments :: data-item(title='Địa chỉ', text=${user.getAddress()})" />
+                            <th:block th:replace="fragments/common-fragments :: data-item(title='Số điện thoại', text=${user.getPhoneNumber()})" />
+                            <th:block th:replace="fragments/common-fragments :: data-item(title='Mã post', text=${user.getPostIndex()})" />
                         </div>
                     </div>
                     <th:block th:if="${page.getContent().size() == 0}">
@@ -44,11 +44,11 @@
                             <thead class="table-active">
                             <tr>
                                 <th>Order №</th>
-                                <th>Date</th>
-                                <th>City</th>
-                                <th>Address</th>
-                                <th>Post index</th>
-                                <th>Order Summary</th>
+                                <th>Ngày</th>
+                                <th>Thành phố</th>
+                                <th>Địa chỉ</th>
+                                <th>Mã post</th>
+                                <th>Tóm tắt đơn hàng</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -62,7 +62,7 @@
                                 <th th:text="'$' + ${order.getTotalPrice()} + '0'"></th>
                                 <th>
                                     <a th:href="@{/admin/order/{orderId} (orderId = ${order.getId()})}">
-                                        Show more
+                                        Xem thêm
                                     </a>
                                 </th>
                             </tr>

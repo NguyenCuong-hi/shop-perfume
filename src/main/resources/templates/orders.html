@@ -30,15 +30,15 @@
                     </form>
                     <div th:insert="~{fragments/common-fragments :: pagination}"></div>
                     <th:block th:if="${page.getContent().size() == 0}"
-                              th:insert="~{fragments/common-fragments :: empty-result(text='Orders not found')}"/>
+                              th:insert="~{fragments/common-fragments :: empty-result(text='Không có đơn hàng hiện tại !')}"/>
                     <table th:unless="${page.getContent().size() == 0}" class="table mt-4 border text-center">
                         <thead class="table-active">
                         <tr>
                             <th>Order №</th>
-                            <th>Date</th>
-                            <th>Customer</th>
+                            <th>Ngày đặt</th>
+                            <th>Khách hàng</th>
                             <th>Email</th>
-                            <th>Sum, $</th>
+                            <th>Thanh toán, đ</th>
                             <th></th>
                         </tr>
                         <tbody th:each="order : ${page.getContent()}">
