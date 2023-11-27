@@ -27,6 +27,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.UUID;
 
 @Service
@@ -108,14 +109,12 @@ public class AdminServiceImpl implements AdminService {
     private MessageResponse savePerfume(PerfumeRequest perfumeRequest, MultipartFile file, String message) throws IOException {
         Perfume perfume = modelMapper.map(perfumeRequest, Perfume.class);
         if (file != null && !file.getOriginalFilename().isEmpty()) {
-            File uploadDir = new File(uploadPath);
+            String filePath = Paths.get(uploadPath).toAbsolutePath().toString();
 
-            if (!uploadDir.exists()) {
-                uploadDir.mkdir();
-            }
             String uuidFile = UUID.randomUUID().toString();
-            String resultFilename = uuidFile + "." + file.getOriginalFilename();
-            file.transferTo(new File(uploadPath + "/" + resultFilename));
+            String resultFilename = uuidFile + file.getOriginalFilename();
+            File fileToBeSave = new File(filePath, resultFilename);
+            file.transferTo(fileToBeSave);
             perfume.setFilename(resultFilename);
         }
         perfumeRepository.save(perfume);
